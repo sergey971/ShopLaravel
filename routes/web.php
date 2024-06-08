@@ -27,7 +27,7 @@ Route::group(['prefix'=>'tag'], function (){
 
 });
 
-//color
+//Color
 
 Route::group(['prefix'=> 'color'], function(){
     Route::get('/', \App\Http\Controllers\Color\IndexController::class)->name('color.index');
@@ -37,6 +37,18 @@ Route::group(['prefix'=> 'color'], function(){
     Route::get('/{color}', \App\Http\Controllers\Color\ShowController::class)->name('color.show');
     Route::patch('/{color}', \App\Http\Controllers\Color\UpdateController::class)->name('color.update');
     Route::delete('/{color}', \App\Http\Controllers\Color\DeleteController::class)->name('color.delete');
+});
+
+//User
+
+Route::group(['prefix'=> 'user'], function(){
+    Route::get('/', \App\Http\Controllers\User\IndexController::class)->name('user.index');
+    Route::get('/create', \App\Http\Controllers\User\CreateController::class)->name('user.create');
+    Route::post('/store', \App\Http\Controllers\User\StoreController::class)->name('user.store');
+    Route::get('/{user}/edit', \App\Http\Controllers\User\EditController::class)->name('user.edit');
+    Route::get('/{user}', \App\Http\Controllers\User\ShowController::class)->name('user.show');
+    Route::patch('/{user}', \App\Http\Controllers\User\UpdateController::class)->name('user.update');
+    Route::delete('/{user}', \App\Http\Controllers\User\DeleteController::class)->name('user.delete');
 });
 
 

@@ -7,5 +7,9 @@ use Illuminate\Http\Request;
 
 class ShowController extends Controller
 {
-    //
+
+    public function __invoke()
+    {
+        // TODO: Implement __invoke() method.
+    }
 }
