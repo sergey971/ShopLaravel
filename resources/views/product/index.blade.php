@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Пользователи</h1>
+                    <h1 class="m-0">Товары</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -24,37 +24,24 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="card-header">
-                    <a href="{{route('user.create')}}" class="btn btn-primary">Добавить</a>
+                    <a href="{{route('product.create')}}" class="btn btn-primary">Добавить</a>
                 </div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Наименование</th>
-                            <th>Email</th>
-                            <th>Имя</th>
-                            <th>Отчество</th>
-                            <th>Возраст</th>
-                            <th>Адрес</th>
-                            <th>Пол</th>
+                            <th>Наименовани</th>
 
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($users as $user)
+                        @foreach($products as $product)
 
                         <tr>
-                            <td>{{$user->id}}</td>
-                            <td><a href="{{route('user.show', $user->id)}}">{{$user->name}}</a>   </td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->surname}}</td>
-                            <td>{{$user->patronymic}}</td>
-                            <td>{{$user->age}}</td>
-                            <td>{{$user->address}}</td>
-                            <td>{{ $user->genderTitle}}</td> <!-- Используйте свойство gender_title -->
+                            <td>{{$product->id}}</td>
+                            <td><a href="{{route('product.show', $product->id)}}">{{$product->title}}</a>   </td>
                         </tr>
-
                         @endforeach
                         </tbody>
                     </table>

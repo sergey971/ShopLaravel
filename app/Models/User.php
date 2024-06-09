@@ -15,7 +15,7 @@ class User extends Authenticatable
     const GENDER_MALE = 1;
     const GENDER_FEMALE = 2;
 
-    public function getGender()
+   public function getGender()
     {
         return [
             self::GENDER_MALE => "Мужской",
@@ -25,7 +25,12 @@ class User extends Authenticatable
 
     public function getGenderTitleAttribute()
     {
-        return $this->getGender()[$this->gender];
+        $genders = $this->getGender();
+        return $genders[$this->gender] ?? 'Не указан';
+
+//        $genders = $this->getGender();
+//        return $genders[$this->gender] ?? 'Не указан';
+
     }
 
     /**

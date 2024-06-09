@@ -1,17 +1,17 @@
 <?php
-// Изменяет профиль
-namespace App\Http\Requests\User;
+
+namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,11 +22,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|string',
-            'surname' => 'nullable|string',
-            'patronymic' => 'nullable|string',
-            'age' => 'nullable|integer',
-            'address' => 'nullable|string',
+            //
         ];
     }
 }

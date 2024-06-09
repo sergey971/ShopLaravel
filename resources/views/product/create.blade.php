@@ -1,13 +1,12 @@
 @extends('layouts/main')
 
 @section('content')
-
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Редактировать пользователя</h1>
+                    <h1 class="m-0">Добавить продукт</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -23,31 +22,25 @@
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
-
             <div class="row">
-
-                <form action="{{ route('user.update', $user->id) }}" method="POST">
+                <form action="{{route('product.store')}}" method="POST">
                     @csrf
-                    @method('patch')
-
                     <div class="form-group">
-                        <input type="text" name="email" value="{{$user->email}}" class="form-control" placeholder="Email">
+                        <input type="text" name="name" class="form-control" placeholder="Наименование">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="surname" value="{{$user->surname}}" class="form-control" placeholder="Имя">
+                        <input type="text" name="description" class="form-control" placeholder="Описание">
+                    </div>
+                    <textarea name="content" class="form-control" placeholder="Текст"></textarea>
+                    <div class="form-group">
+                        <input type="text" name="price" class="form-control" placeholder="Цена">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="patronymic" value="{{$user->patronymic}}" class="form-control" placeholder="Отчество">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="age" value="{{$user->age}}" class="form-control" placeholder="Возраст">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="address" value="{{$user->address}}" class="form-control" placeholder="Адрес">
+                        <input type="text" name="count" class="form-control" placeholder="Колличесво на складе">
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Редактировать">
+                        <input type="submit" class="btn btn-primary" value="Добавить">
                     </div>
                 </form>
             </div>

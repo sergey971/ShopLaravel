@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UpdateRequest;
+Use App\Models\User;
 use Illuminate\Http\Request;
 
 class UpdateController extends Controller
@@ -13,7 +14,6 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
         $user->update($data);
-        dd($user);
         return view('user.show', compact('user'));
 
     }
