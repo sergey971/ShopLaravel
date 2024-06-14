@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ProductTag extends Model
 {
     protected  $table = 'product_tags';
-    protected $quarded = false;
+    protected $fillable =
+        [
+            'tag_id',
+
+
+        ];
+
 }

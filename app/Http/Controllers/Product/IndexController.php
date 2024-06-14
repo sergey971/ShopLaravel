@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function __invoke(Product $products){
+    public function __invoke(){
+
         $products = Product::all();
+
         return view('product.index', compact('products'));
     }
 }

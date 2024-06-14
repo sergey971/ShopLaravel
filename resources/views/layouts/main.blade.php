@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Магазин</title>
-
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset("adminlte/plugins/select2/css/select2.min.css")}}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -230,5 +231,11 @@
 <script src="{{asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.js')}}"></script>
+<!-- Select2 -->
+<script src="{{asset("adminlte/plugins/select2/js/select2.full.min.js")}}"></script>
+<script>
+        $(".tags").select2()
+        $(".colors").select2()
+</script>
 </body>
 </html>

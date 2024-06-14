@@ -32,15 +32,28 @@
                         <tr>
                             <th>ID</th>
                             <th>Наименовани</th>
+                            <th>Описание</th>
+                            <th>Текст</th>
+                            <th>Изображение</th>
+                            <th>Число на складе</th>
+                            <th>Публикация</th>
+                            <th>Категория ID</th>
 
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($products as $product)
-
                         <tr>
                             <td>{{$product->id}}</td>
-                            <td><a href="{{route('product.show', $product->id)}}">{{$product->title}}</a>   </td>
+                            <td><a href="{{route('product.show', $product->id)}}">{{$product->name}}</a>   </td>
+
+                            <td>{{$product->description}}</td>
+                            <td>{{$product->content}}</td>
+                            <td><img src="{{$product->preview_img}}" alt=""></td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->count}}</td>
+                            <td>{{$product->is_published}}</td>
+                            <td>{{$product->category_id}}</td>
                         </tr>
                         @endforeach
                         </tbody>
@@ -52,3 +65,4 @@
     </section>
     <!-- /.content -->
 @endsection
+
